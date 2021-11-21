@@ -1,3 +1,3 @@
 export default function AdminPostsPage({}) {
-  return <main></main>;
+  return <main>Admin Posts</main>;
 }

@@ -3,8 +3,8 @@
 import Link from "next/link";
 
 export default function Navbar() {
-  const user = null;
-  const username = null;
+  const user = true;
+  const username = true;
 
   return (
     <nav className="navbar">
@@ -24,7 +24,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link href={`/${username}`}>
-                <img src={user?.photoURL} alt="User Avatar" />
+                <img src={user?.photoURL} />
               </Link>
             </li>
           </>
