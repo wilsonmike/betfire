@@ -1,17 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/link-passhref */
 import Link from "next/link";
+import { useContext } from "react";
+import { UserContext } from "../lib/context";
+import { useRouter } from "next/router";
+import { auth } from "../lib/firebase";
 
 export default function Navbar() {
-  const user = null;
-  const username = null;
+  const { user, username } = useContext(UserContext);
+
+  const router = useRouter();
+
+  const signOut = () => {
+    auth.signOut();
+    router.reload();
+  };
 
   return (
     <nav className="navbar">
       <ul>
         <li>
           <Link href="/">
-            <button className="btn-logo">FEED</button>
+            <button onClick={signOut} className="btn-logo">
+              FEED
+            </button>
           </Link>
         </li>
         {/* user is signed in and has username */}
